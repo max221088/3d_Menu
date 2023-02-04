@@ -85,18 +85,18 @@ ul {
   right: 0;
   z-index: 1;
 }
-.main .wrapper {
+.main .main_container .wrapper {
   width: 1200px;
   margin: 50px auto;
 }
-.main .wrapper .contetnt_title {
+.main .main_container .wrapper .contetnt_title {
   font-weight: bold;
   color: #808080;
   font-size: 38px;
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 20px;
 }
-.main .wrapper .content_box .some_content {
+.main .main_container .wrapper .content_box .some_content {
   color: #808080;
   font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
