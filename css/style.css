@@ -176,6 +176,7 @@ ul {
 }
 .menu_3d_continer .nav_menu .exit_btn {
   margin-top: 15px;
+  cursor: pointer;
 }
 .menu_3d_continer .nav_menu .exit_btn:hover span {
   box-shadow: 0px 0px 18px 1px rgba(4, 0, 2, 0.24);

@@ -50,7 +50,6 @@ ol,ul {
         right: 0;
         z-index: 3;
         transform-style: preserve-3d;
-        //transform: rotateY(40deg) translateX(100px) scale(.75);
         transform-origin: 0 50%;
         transition: 0.7s;
     
@@ -160,7 +159,6 @@ ol,ul {
                 }
             }
         }
-
     }
     .nav_menu{
         position: absolute;
@@ -176,18 +174,17 @@ ol,ul {
         
         &.active{
             opacity: 1;
-            //display: flex;
             transform: translateX(-10vw);
         }
 
         .exit_btn{
             margin-top: 15px;
+            cursor: pointer;
             &:hover{
                 span{
                     box-shadow: 0px 0px 18px 1px rgba(4, 0, 2, 0.24);
                     background-color: #5f5f5f;
                 }
-                
             }
             .left{
                 display: inline-block;
