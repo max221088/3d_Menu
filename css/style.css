@@ -51,13 +51,13 @@ ul {
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 3;
   transform-style: preserve-3d;
   transform-origin: 0 50%;
-  transition: 0.4s;
+  transition: 0.7s;
 }
 .menu_3d_continer .content_wrapper::before {
   content: '';
-  transform: translateZ(-100px);
   opacity: 0;
   transition: 0.6s;
   background-color: #363636;
@@ -69,7 +69,7 @@ ul {
 }
 .menu_3d_continer .content_wrapper::after {
   content: '';
-  transform: translateZ(-200px);
+  transition: 0.5;
   opacity: 0;
   transition: 0.8s;
   background-color: #3b3b3b;
@@ -84,9 +84,11 @@ ul {
 }
 .menu_3d_continer .content_wrapper.active::before {
   opacity: 0.5;
+  transform: translateZ(-100px);
 }
 .menu_3d_continer .content_wrapper.active::after {
   opacity: 0.5;
+  transform: translateZ(-200px);
 }
 .menu_3d_continer .content_wrapper .header {
   position: absolute;
@@ -155,4 +157,61 @@ ul {
   color: #808080;
   font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
+}
+.menu_3d_continer .nav_menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.7s;
+}
+.menu_3d_continer .nav_menu.active {
+  opacity: 1;
+  transform: translateX(-10vw);
+}
+.menu_3d_continer .nav_menu .exit_btn {
+  margin-top: 15px;
+}
+.menu_3d_continer .nav_menu .exit_btn:hover span {
+  box-shadow: 0px 0px 18px 1px rgba(4, 0, 2, 0.24);
+  background-color: #5f5f5f;
+}
+.menu_3d_continer .nav_menu .exit_btn .left {
+  display: inline-block;
+  width: 4px;
+  height: 40px;
+  border-radius: 1px;
+  background-color: #a0a0a0;
+  transform: rotate(45deg);
+}
+.menu_3d_continer .nav_menu .exit_btn .right {
+  display: inline-block;
+  width: 4px;
+  height: 40px;
+  background-color: #a0a0a0;
+  border-radius: 1px;
+  transform: rotate(-45deg) translateX(-5px) translateY(-5px);
+}
+.menu_3d_continer .nav_menu .menu_items {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #808080;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.menu_3d_continer .nav_menu .menu_items li {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.menu_3d_continer .nav_menu .menu_items li:hover {
+  text-shadow: 0px 1px 3px 11px rgba(4, 0, 2, 0.23);
+  color: #313131;
 }
