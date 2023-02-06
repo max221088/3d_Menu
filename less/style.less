@@ -51,18 +51,23 @@ ol,ul {
         z-index: 3;
         transform-style: preserve-3d;
         transform-origin: 0 50%;
-        transition: 0.7s;
+        transition-property: all;
+        transition-timing-function: ease;
+        transition-duration: 0.5s;
     
         &::before{
             content: '';
             opacity: 0;
-            transition: 0.6s;
             background-color: rgb(54, 54, 54);
             position: absolute;
             top: 0;
             bottom: 0;
             right: 0;
             left: 0;
+            transition-property: all;
+            transition-timing-function: ease;
+            transition-duration: 0.3s;
+            transition-delay: 0.4s;
         }
         &::after{
             content: '';
@@ -75,6 +80,10 @@ ol,ul {
             bottom: 0;
             right: 0;
             left: 0;
+            transition-property: all;
+            transition-timing-function: ease;
+            transition-duration: 0.4s;
+            transition-delay: 0.4s;
         }
         &.active{
             transform: rotateY(40deg) translateX(100px) scale(.75);
@@ -166,15 +175,36 @@ ol,ul {
         bottom: 0;
         right: 0;
         z-index: 2;
+        opacity: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        transition: 0.7s;
+        transition-property: all;
+        transition-timing-function: ease;
+        transition-duration: 0.2s;
+        transition-delay: 0.2s;
         
         &.active{
             opacity: 1;
-            transform: translateX(-10vw);
+            
+
+            .menu_items li{
+                opacity: 1;
+
+                &:nth-child(2){
+                    transform: translateY(10px);
+                }
+                &:nth-child(3){
+                    transform: translateY(20px);
+                }
+                &:nth-child(4){
+                    transform: translateY(30px);
+                }
+                &:nth-child(5){
+                    transform: translateY(40px);
+                }
+            }
         }
 
         .exit_btn{
@@ -208,16 +238,23 @@ ol,ul {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            margin-right: 10vw;
+            margin-top: -60px;
             .font-title();
             
             li{
-                margin-bottom: 10px;
+                opacity: 0;
                 text-transform: uppercase;
+                transition-property: all;
+                transition-timing-function: ease;
+                transition-duration: 0.5s;
+                transition-delay: 0.3s;
                 cursor: pointer;
                 
                 &:hover{
                     text-shadow: 0px 1px 3px 11px rgba(4, 0, 2, 0.23);
                     color: #313131;
+                    transition: none;
                 }
             }
         }

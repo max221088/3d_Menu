@@ -54,18 +54,23 @@ ul {
   z-index: 3;
   transform-style: preserve-3d;
   transform-origin: 0 50%;
-  transition: 0.7s;
+  transition-property: all;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
 }
 .menu_3d_continer .content_wrapper::before {
   content: '';
   opacity: 0;
-  transition: 0.6s;
   background-color: #363636;
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
+  transition-property: all;
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+  transition-delay: 0.4s;
 }
 .menu_3d_continer .content_wrapper::after {
   content: '';
@@ -78,6 +83,10 @@ ul {
   bottom: 0;
   right: 0;
   left: 0;
+  transition-property: all;
+  transition-timing-function: ease;
+  transition-duration: 0.4s;
+  transition-delay: 0.4s;
 }
 .menu_3d_continer .content_wrapper.active {
   transform: rotateY(40deg) translateX(100px) scale(0.75);
@@ -164,15 +173,33 @@ ul {
   bottom: 0;
   right: 0;
   z-index: 2;
+  opacity: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  transition: 0.7s;
+  transition-property: all;
+  transition-timing-function: ease;
+  transition-duration: 0.2s;
+  transition-delay: 0.2s;
 }
 .menu_3d_continer .nav_menu.active {
   opacity: 1;
-  transform: translateX(-10vw);
+}
+.menu_3d_continer .nav_menu.active .menu_items li {
+  opacity: 1;
+}
+.menu_3d_continer .nav_menu.active .menu_items li:nth-child(2) {
+  transform: translateY(10px);
+}
+.menu_3d_continer .nav_menu.active .menu_items li:nth-child(3) {
+  transform: translateY(20px);
+}
+.menu_3d_continer .nav_menu.active .menu_items li:nth-child(4) {
+  transform: translateY(30px);
+}
+.menu_3d_continer .nav_menu.active .menu_items li:nth-child(5) {
+  transform: translateY(40px);
 }
 .menu_3d_continer .nav_menu .exit_btn {
   margin-top: 15px;
@@ -203,16 +230,23 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-right: 10vw;
+  margin-top: -60px;
   color: #808080;
   font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
 }
 .menu_3d_continer .nav_menu .menu_items li {
-  margin-bottom: 10px;
+  opacity: 0;
   text-transform: uppercase;
+  transition-property: all;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+  transition-delay: 0.3s;
   cursor: pointer;
 }
 .menu_3d_continer .nav_menu .menu_items li:hover {
   text-shadow: 0px 1px 3px 11px rgba(4, 0, 2, 0.23);
   color: #313131;
+  transition: none;
 }
