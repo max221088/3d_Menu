@@ -155,14 +155,14 @@ ul {
   width: 1200px;
   margin: 50px auto;
 }
-.menu_3d_continer .content_wrapper .main .wrapper .contetnt_title {
+.menu_3d_continer .content_wrapper .main .wrapper .inner_content .contetnt_title {
   font-weight: bold;
   color: #808080;
   font-size: 38px;
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 20px;
 }
-.menu_3d_continer .content_wrapper .main .wrapper .content_box .some_content {
+.menu_3d_continer .content_wrapper .main .wrapper .inner_content .content_box .some_content {
   color: #808080;
   font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
