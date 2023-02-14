@@ -8,10 +8,11 @@ const $innerCont = document.querySelector(".inner_content");
 const routes = {
 	404: "/pages/404.html",
 	"": "/index.html",
-	"#about": "/pages/about.html",
-	"#contact": "/pages/contact.html",
-	"#gallery": "/pages/gallery.html",
-	"#partners": "/pages/partners.html",
+	home: "/pages/home.html",
+	about: "/pages/about.html",
+	contact: "/pages/contact.html",
+	gallery: "/pages/gallery.html",
+	partners: "/pages/partners.html",
 };
 
 // Controllers
@@ -39,8 +40,8 @@ function liveReload(link) {
 
 // Innit section
 
-history.pushState(null, null, routes[""]);
-location.hash = "";
+history.pushState(null, null, routes[""] + "/home");
+liveReload("home");
 
 // Actions
 
@@ -51,13 +52,11 @@ $btnExit.addEventListener("click", exit);
 $menuItems.forEach(function (el) {
 	el.addEventListener("click", function () {
 		let link = this.getAttribute("data-link");
-		//console.log(link);
-		location.hash = link;
-		//liveReload(link);
+		history.pushState(null, null, routes[""] + "/" + link);
+		liveReload(window.location.href.split("/").reverse()[0]);
 	});
 });
 
-window.addEventListener("hashchange", function () {
-	//console.log(window.location.hash);
-	liveReload(window.location.hash);
+window.addEventListener("popstate", function () {
+	liveReload(window.location.href.split("/").reverse()[0]);
 });
